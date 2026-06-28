@@ -1,0 +1,233 @@
+/* ── Section ─────────────────────────────────────────── */
+.projects {
+  background: #faf9f7;
+  color: #0e0e0e;
+  padding: 5rem 2rem;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.projects-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.projects-eyebrow {
+  display: block;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #1d9e75;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.projects h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #1a3a5c;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ── Filter bar ──────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid #1a3a5c;
+  background: transparent;
+  color: #1a3a5c;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.filter-btn:hover {
+  background: #1a3a5c;
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: #1d9e75;
+  color: #fff;
+  border-color: #1d9e75;
+}
+
+/* ── Grid ────────────────────────────────────────────── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5px;
+  background: #e0ddd8;
+  border: 1px solid #e0ddd8;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.project-card {
+  background: #fff;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  /* scroll-reveal: starts hidden */
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.55s ease-out,
+    background 0.2s;
+}
+
+/* animated top-border on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1d9e75, #1a6fff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.32s ease;
+}
+
+.project-card:hover {
+  background: #f9fffe;
+}
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* JS adds .visible via IntersectionObserver */
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Category badge ──────────────────────────────────── */
+.project-category {
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  margin-bottom: 0.85rem;
+  border: 1px solid;
+}
+
+.cat-web {
+  color: #1a3a5c;
+  background: #e8eef5;
+  border-color: #9bb4d4;
+}
+
+.cat-mobile {
+  color: #7a4500;
+  background: #fdf0e0;
+  border-color: #f0c990;
+}
+
+.cat-qa-automation {
+  color: #0e5c3b;
+  background: #e4f1ea;
+  border-color: #a3d4bb;
+}
+
+/* ── Title ───────────────────────────────────────────── */
+.project-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0e0e0e;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ── Stack pills ─────────────────────────────────────── */
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.stack-pill {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.55rem;
+  background: #f0f4f8;
+  border: 1px solid #d0d8e4;
+  border-radius: 2px;
+  color: #1a3a5c;
+  letter-spacing: 0.03em;
+}
+
+/* ── Description ─────────────────────────────────────── */
+.project-card p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Links ───────────────────────────────────────────── */
+.project-card a {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: #1d9e75;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.project-card a:hover {
+  color: #0e5c3b;
+  text-decoration: underline;
+}
+
+.link-placeholder {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #bbb;
+  letter-spacing: 0.06em;
+}
+
+/* ── Empty state ─────────────────────────────────────── */
+.no-results {
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 3rem 0;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .projects {
+    padding: 3.5rem 1.25rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

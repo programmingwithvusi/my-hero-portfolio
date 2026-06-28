@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Profile</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-left">
+        <img src="portrait.jpg" alt="Vusi Dhlamini" class="portrait" />
+      </div>
+
+      <div class="hero-right">
+        <h1>Vusi Dhlamini</h1>
+        <h2>Test Analyst & Full‑Stack Developer</h2>
+        <p class="tagline">
+          Driving Quality, Innovation, and SaaS Modernisation
+        </p>
+
+        <div class="skills">
+          <div class="skill">
+            🧩 Testing Expertise: Architecture Validation · Business Object QA ·
+            Crystal Reports · Wyn Enterprise
+          </div>
+          <div class="skill">
+            💻 Development Stack: .NET 8 · React · TypeScript · SQL · Docker ·
+            Cordova
+          </div>
+          <div class="skill">
+            ⚙️ Automation & DevOps: Jenkins Pipelines · SaaS Transition ·
+            Playwright · CI/CD
+          </div>
+        </div>
+
+        <div class="cta">
+          <a href="projects.html" class="btn btn-primary">View My Projects</a>
+          <a href="Vusi_Dhlamini_CV.docx" class="btn btn-secondary"
+            >Download My CV</a
+          >
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>10+</strong><span>Years Experience</span>
+          </div>
+          <div class="stat">
+            <strong>48.6%</strong><span>Defect Identification Rate</span>
+          </div>
+          <div class="stat">
+            <strong>4</strong><span>SYSPRO Generations Tested</span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+          },
+          { threshold: 0.2 },
+        );
+
+        document
+          .querySelectorAll('.skill, .stat')
+          .forEach((el) => observer.observe(el));
+      </script>
+    </section>
+  </body>
+</html>
