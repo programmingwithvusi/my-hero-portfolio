@@ -1,6 +1,8 @@
 import React from 'react';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 import '../styles/Hero.css';
+import heroImage from '../assets/portrait.jpg';
+import brochure from '../assets/Vusi_Dhlamini_CV.pdf';
 
 const Hero: React.FC = () => {
   // Apply fade-in to skills and stats
@@ -9,11 +11,7 @@ const Hero: React.FC = () => {
   return (
     <section className="hero">
       <div className="hero-left">
-        <img
-          src="../src/assets/portrait.jpg"
-          alt="Vusi Dhlamini"
-          className="portrait"
-        />
+        <img src={heroImage} alt="Vusi Dhlamini" className="portrait" />
       </div>
 
       <div className="hero-right">
@@ -43,7 +41,7 @@ const Hero: React.FC = () => {
             View My Projects
           </a>
           <a
-            href="../src/assets/public/Vusi_Dhlamini_CV.pdf"
+            href={brochure}
             className="btn btn-secondary"
             target="_blank"
             rel="noopener noreferrer"
