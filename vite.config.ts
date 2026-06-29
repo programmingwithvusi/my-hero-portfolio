@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     copy({
       targets: [
-        { src: 'src/assets/*.{jpg,pdf}', dest: 'dist/assets' }
+        { src: 'src/assets/*.{jpg,pdf}', dest: './dist/assets' }
       ]
     })
   ],
