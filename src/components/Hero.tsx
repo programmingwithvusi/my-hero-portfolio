@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     <section className="hero">
       <div className="hero-left">
         <img
-          src="../src/assets/portrait.jpg"
+          src="../public/portrait.jpg"
           alt="Vusi Dhlamini"
           className="portrait"
         />
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             View My Projects
           </a>
           <a
-            href="../src/assets/Vusi_Dhlamini_CV.pdf"
+            href="../public/Vusi_Dhlamini_CV.pdf"
             className="btn btn-secondary"
             target="_blank"
             rel="noopener noreferrer"
