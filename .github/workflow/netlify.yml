@@ -37,8 +37,29 @@ jobs:
           name: dist
           path: dist
 
-  deploy:
+  test-server:
     needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download dist
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Start Vite preview server
+        run: npm run preview &
+      
+      - name: Wait for server
+        run: npx wait-on http://localhost:4173
+
+      # Example: run Playwright/Cypress tests here
+      - name: Run integration tests
+        run: npm run test:e2e
+
+  deploy:
+    needs: [build, test-server]
     runs-on: ubuntu-latest
 
     steps:
