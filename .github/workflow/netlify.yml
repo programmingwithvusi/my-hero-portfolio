@@ -49,10 +49,10 @@ jobs:
           path: dist
 
       - name: Start Vite preview server
-        run: npm run preview &
+        run: npm run start &
       
       - name: Wait for server
-        run: npx wait-on http://localhost:4173
+        run: npx wait-on http://localhost:5173
 
       # Example: run Playwright/Cypress tests here
       - name: Run integration tests
