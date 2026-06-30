@@ -13,7 +13,7 @@ export const projects: Project[] = [
         stack: '.NET 8 · React · TypeScript · Stripe · Claude API · WMI',
         description:
             'Windows SaaS application for PC health monitoring and diagnostics. Features a real WMI-based backend, React/Vite frontend, Stripe subscription billing (R149/month Pro plan), and an AI assistant powered by the Claude API.',
-        link: 'https://pcclarity-app.netlify.app/dashboard',
+        link: 'https://pcclarity-app.netlify.app',
         category: 'Web',
     },
     /*
