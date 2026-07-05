@@ -83,6 +83,13 @@ const ProjectCard: React.FC<CardProps> = ({ project, index }) => {
       ) : (
         <span className="link-placeholder">Coming soon</span>
       )}
+      {hasRealLink ? (
+        <a href={project.refLink} target="_blank" rel="noopener noreferrer">
+          Playwright Test →
+        </a>
+      ) : (
+        <span className="link-placeholder">Coming soon</span>
+      )}
     </div>
   );
 };
