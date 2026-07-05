@@ -56,7 +56,7 @@ export const projects: Project[] = [
         category: 'QA Automation',
     },
     {
-        title: 'PlaywrightTestsCodeSnipet',
+        title: 'TestShowcaseSnipet',
         stack: 'C# · Playwright · MSTest · .NET 10',
         description: 'The code snippet demonstrates a Playwright test case in C# using MSTest. It automates browser interactions, including navigation, element selection, and assertions, to validate web application functionality.',
         link: 'https://playwright-showcase.netlify.app',
