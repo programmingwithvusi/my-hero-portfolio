@@ -51,8 +51,10 @@ interface CardProps {
 const ProjectCard: React.FC<CardProps> = ({ project, index }) => {
   const { ref, visible } = useInView();
   const pills = toStackPills(project.stack);
-  const hasRealLink = project.link && project.link !== '#';
-
+  // const hasRealLink =
+  // (project.link && project.link !== '#') ||
+  // (project.test && project.test !== '#');
+  //project.test ||
   return (
     <div
       ref={ref}
@@ -76,19 +78,41 @@ const ProjectCard: React.FC<CardProps> = ({ project, index }) => {
       </div>
 
       <p>{project.description}</p>
-      {hasRealLink ? (
-        <a href={project.link} target="_blank" rel="noopener noreferrer">
-          View Project →
-        </a>
+      {/* View project link */}
+      {project.link && project.link !== '#' ? (
+        <>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            View Project →
+          </a>
+          <br />
+        </>
       ) : (
-        <span className="link-placeholder">Coming soon</span>
+        <>
+          <span className="link-placeholder">Coming soon</span>
+          <br />
+        </>
       )}
-      {hasRealLink ? (
-        <a href={project.refLink} target="_blank" rel="noopener noreferrer">
-          Playwright Test →
+      {project.test && project.test !== '#' ? (
+        <>
+          {/* View Test link */}
+          <a href={project.test} target="_blank" rel="noopener noreferrer">
+            Test →
+          </a>
+          <br />
+        </>
+      ) : (
+        <>
+          <span className="link-placeholder">Test coming soon</span>
+          <br />
+        </>
+      )}
+      {/* Source Code link */}
+      {project.repo && project.repo !== '#' ? (
+        <a href={project.repo} target="_blank" rel="noopener noreferrer">
+          Source Code →
         </a>
       ) : (
-        <span className="link-placeholder">Coming soon</span>
+        <span className="link-placeholder">Repo coming soon</span>
       )}
     </div>
   );

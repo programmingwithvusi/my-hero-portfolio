@@ -76,19 +76,60 @@
 }
 
 /* ── Card ────────────────────────────────────────────── */
+/*
 .project-card {
   background: #fff;
   padding: 2rem;
   position: relative;
   overflow: hidden;
 
-  /* scroll-reveal: starts hidden */
+  /* scroll-reveal: starts hidden 
   opacity: 0;
   transform: translateY(28px);
   transition:
     opacity 0.55s ease-out,
     transform 0.55s ease-out,
     background 0.2s;
+}
+*/
+
+.project-card {
+  background: linear-gradient(135deg, #1e3c72 0%, var(--color-primary) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a subtle animated overlay */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 /* animated top-border on hover */
@@ -230,4 +271,44 @@
   .project-grid {
     grid-template-columns: 1fr;
   }
+}
+/* Styling test href link for projects */
+
+.link-placeholder {
+  color: #888;
+  font-style: italic;
+  margin-right: 1rem;
+}
+.test-link {
+  color: #007acc;
+  text-decoration: none;
+}
+.test-link:hover {
+  text-decoration: underline;
+}
+
+/*Update a href for project link */
+a {
+  color: #007acc;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
