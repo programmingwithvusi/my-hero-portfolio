@@ -27,7 +27,7 @@ export const projects: Project[] = [
             'This project is a mechanical repair management app that tracks vehicles and repair jobs, supports database seeding, and deploys via Render and Netlify for seamless full‑stack hosting and API communication.',
         link: 'https://mechanical-repair-app.netlify.app',
         category: 'Web',
-        test: "https://mechanical-repair-app.netlify.app/playwright-report",
+        test: "https://playwright-showcase.netlify.app/",
         repo: "https://github.com/programmingwithvusi/mechanical-repair-app"
     },
     {
@@ -47,7 +47,7 @@ export const projects: Project[] = [
             'Automated end-to-end browser testing project using Microsoft Playwright with MSTest and C#, targeting .NET 10. Covers test discovery, NuGet package configuration, and browser automation for web application QA.',
         link: 'https://mechanical-repair-app.netlify.app/playwright-report/',
         category: 'QA Automation',
-        test: "#",
+        test: "https://playwright-showcase.netlify.app/",
         repo: "https://github.com/programmingwithvusi/mechanical-repair-app/tree/main/frontend"
     },
     {
